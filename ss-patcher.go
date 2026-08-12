@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/shirou/gopsutil/v3/process"
+	"github.com/shirou/gopsutil/v4/process"
 
 	// Register the pure-Go SQLite driver with the database/sql package
 	_ "modernc.org/sqlite"
