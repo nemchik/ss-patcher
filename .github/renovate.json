@@ -4,5 +4,6 @@
     "github>nemchik/renovate-config",
     ":automergeAll",
     ":label(dependencies)"
-  ]
+  ],
+  "postUpdateOptions": ["gomodUpdateImportPaths"]
 }
