@@ -6,6 +6,7 @@ name: Go
 on:
   push:
     branches: ["main"]
+    tags: ["v*.*.*"]
   pull_request:
     branches: ["main"]
 
@@ -21,7 +22,14 @@ jobs:
           go-version-file: "./go.mod"
 
       - name: Build
-        run: go build -v ./...
+        run: go build -v -o ss-patcher.exe ./...
 
       - name: Test
         run: go test -v ./...
+
+      - name: Create GitHub Release and Upload EXE
+        uses: softprops/action-gh-release@v3.0.0
+        if: github.ref_type == 'tag'
+        with:
+          generate_release_notes: true
+          files: ss-patcher.exe
