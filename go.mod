@@ -4,7 +4,7 @@ go 1.26.5
 
 require (
 	github.com/shirou/gopsutil/v4 v4.26.8
-	modernc.org/sqlite v1.60.0
+	modernc.org/sqlite v1.60.1
 )
 
 require (
